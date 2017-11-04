@@ -1,0 +1,6 @@
+---
+- type: replace
+  path: /releases/name=cf-bonus-links
+  value:
+    name: cf-bonus-links
+    version: latest
