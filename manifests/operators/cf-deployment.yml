@@ -1,0 +1,16 @@
+- type: replace
+  path: /releases/-
+  value:
+    name: cf-bonus-links
+    version: latest
+
+- type: replace
+  path: /instance_groups/name=api/jobs/-
+  value:
+    name: cf-bonus-links
+    release: cf-bonus-links
+    properties:
+      api_url: "https://api.((system_domain))"
+      ca_cert: "((router_ssl.certificate))"
+      admin_username: admin
+      admin_password: "((cf_admin_password))"

@@ -3,4 +3,23 @@ name: cf-bonus-links
 packages: []
 templates:
   ignoreme: ignoreme
-properties: {}
+
+provides:
+- name: cf
+  type: cf
+  properties:
+  - api_url
+  - ca_cert
+  - admin_username
+  - admin_password
+properties:
+  api_url:
+    description: URL to Cloud Foundry API
+    example: https://api.mydomain.com
+  ca_cert:
+    description: Root certificate for client access to Cloud Foundry API/UAA
+  admin_username:
+    description: Password for admin user
+    default: admin
+  admin_password:
+    description: Password for admin user
