@@ -2,14 +2,14 @@
 name: cf-bonus-links
 
 instance_groups:
-- name: cf-bonus-links
+- name: cf-admin-user
   azs: [z1, z2, z3]
   instances: 1
   vm_type: default
   stemcell: default
   networks: [{name: default}]
   jobs:
-  - name: cf-bonus-links
+  - name: cf-admin-user
     release: cf-bonus-links
     properties: {}
 
