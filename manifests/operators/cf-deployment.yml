@@ -7,7 +7,7 @@
 - type: replace
   path: /instance_groups/name=api/jobs/-
   value:
-    name: cf-bonus-links
+    name: cf-admin-user
     release: cf-bonus-links
     properties:
       api_url: "https://api.((system_domain))"

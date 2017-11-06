@@ -1,12 +1,12 @@
 ---
-name: cf-bonus-links
+name: cf-admin-user
 packages: []
 templates:
   ignoreme: ignoreme
 
 provides:
-- name: cf
-  type: cf
+- name: cf-admin-user
+  type: api-user
   properties:
   - api_url
   - ca_cert
