@@ -2,5 +2,5 @@
 blobstore:
   provider: s3
   options:
-    bucket_name: cf-bonus-links-boshrelease
-final_name: cf-bonus-links
+    bucket_name: collection-of-pullrequests-boshrelease
+final_name: collection-of-pullrequests
