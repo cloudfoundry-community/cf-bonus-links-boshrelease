@@ -1,10 +1,4 @@
 - type: replace
-  path: /releases/-
-  value:
-    name: collection-of-pullrequests
-    version: latest
-
-- type: replace
   path: /instance_groups/name=api/jobs/-
   value:
     name: cf-admin-user
@@ -14,3 +8,9 @@
       ca_cert: "((router_ssl.certificate))"
       admin_username: admin
       admin_password: "((cf_admin_password))"
+
+- type: replace
+  path: /releases/-
+  value:
+    name: collection-of-pullrequests
+    version: latest
