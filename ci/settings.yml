@@ -5,6 +5,9 @@ meta:
   url:     https://ci.starkandwayne.com
   test-errand: ~
 
+  manifest:
+    path:   manifests/prepare-env.yml
+
   initial_version: 1.0.0
 
   git:
