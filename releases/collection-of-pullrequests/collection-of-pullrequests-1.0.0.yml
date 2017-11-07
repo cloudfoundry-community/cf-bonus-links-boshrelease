@@ -1,0 +1,17 @@
+name: collection-of-pullrequests
+version: 1.0.0
+commit_hash: eefe073
+uncommitted_changes: false
+jobs:
+- name: cf-admin-user
+  version: 951607c85f7107651664cb4c178740f0bf09464a
+  fingerprint: 951607c85f7107651664cb4c178740f0bf09464a
+  sha1: a55e617d6fb921a478b38073e69a8fa817b07a14
+- name: prepare_env
+  version: cd7099f79b6e931a682e105825c14ed5f2ceb0bf
+  fingerprint: cd7099f79b6e931a682e105825c14ed5f2ceb0bf
+  sha1: 07296e44df70be88eddde4d0ae722ce02a41ee88
+license:
+  version: ac77a509d8b020148f8ce7b3ecce592f89c29c87
+  fingerprint: ac77a509d8b020148f8ce7b3ecce592f89c29c87
+  sha1: 26e0a024431898e9ec6581de7231520cfa08d1d5
