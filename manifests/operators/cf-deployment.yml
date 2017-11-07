@@ -1,14 +1,14 @@
 - type: replace
   path: /releases/-
   value:
-    name: cf-bonus-links
+    name: collection-of-pullrequests
     version: latest
 
 - type: replace
   path: /instance_groups/name=api/jobs/-
   value:
     name: cf-admin-user
-    release: cf-bonus-links
+    release: collection-of-pullrequests
     properties:
       api_url: "https://api.((system_domain))"
       ca_cert: "((router_ssl.certificate))"
