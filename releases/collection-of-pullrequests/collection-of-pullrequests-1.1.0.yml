@@ -1,0 +1,21 @@
+name: collection-of-pullrequests
+version: 1.1.0
+commit_hash: 06696f3
+uncommitted_changes: false
+jobs:
+- name: cf-admin-user
+  version: 951607c85f7107651664cb4c178740f0bf09464a
+  fingerprint: 951607c85f7107651664cb4c178740f0bf09464a
+  sha1: a55e617d6fb921a478b38073e69a8fa817b07a14
+- name: port_forwarding
+  version: 37bafdecae95c5d71421e2c6b99e670484c6c395
+  fingerprint: 37bafdecae95c5d71421e2c6b99e670484c6c395
+  sha1: 86c491e7c67113a2a8c0cddcfa33dc038fa01951
+- name: pre-start-script
+  version: c380cebc1e110542b932157d76b880c8c07c03a2
+  fingerprint: c380cebc1e110542b932157d76b880c8c07c03a2
+  sha1: cf7fe6cbc8e44cd244c4eaceb38b5309cba9bc6d
+license:
+  version: ac77a509d8b020148f8ce7b3ecce592f89c29c87
+  fingerprint: ac77a509d8b020148f8ce7b3ecce592f89c29c87
+  sha1: 26e0a024431898e9ec6581de7231520cfa08d1d5
