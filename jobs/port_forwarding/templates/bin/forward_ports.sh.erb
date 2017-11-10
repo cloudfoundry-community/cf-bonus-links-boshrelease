@@ -1,0 +1,40 @@
+#!/bin/bash
+
+CHAIN="portforwarding-release"
+
+function forward_exists {
+	set -e
+	chain=$1
+	iptables -t nat -C ${chain} -j ${CHAIN} 2>/dev/null
+}
+
+if ! iptables -t nat -L ${CHAIN} >/dev/null 2>&1; then
+	iptables -t nat -N ${CHAIN}
+fi
+
+if ! forward_exists PREROUTING; then
+	iptables -t nat -A PREROUTING -j ${CHAIN}
+fi
+
+if ! forward_exists OUTPUT; then
+	iptables -t nat -A OUTPUT -j ${CHAIN}
+fi
+
+iptables -F ${CHAIN} || true
+
+sysctl net.ipv4.conf.all.route_localnet=1
+
+<% p("networking.port_forwarding").each do |rule| %>
+	<%
+		external_ip   = rule['external_ip']   || spec.address
+		external_port = rule['external_port'] || raise("Expected non-empty 'external_port' on '#{rule.inspect}' rule")
+		internal_ip   = rule['internal_ip']   || "127.0.0.1"
+		internal_port = rule['internal_port'] || raise("Expected non-empty 'internal_port' on '#{rule.inspect}' rule")
+	-%>
+	# external clients
+	sudo iptables -t nat -A portforwarding-release -p tcp -d <%= external_ip %> --dport <%= external_port %> -j DNAT --to <%= internal_ip %>:<%= internal_port %>
+
+	# loopback
+	sudo iptables -t nat -A portforwarding-release -p tcp -d 127.0.0.1 --dport <%= external_port %> -j DNAT --to <%= internal_ip %>:<%= internal_port %> -o lo
+
+<% end %>
