@@ -6,7 +6,7 @@ meta:
   test-errand: ~
 
   manifest:
-    path:   manifests/prepare-env.yml
+    path:   manifests/pre-start-script.yml
 
   initial_version: 1.0.0
 

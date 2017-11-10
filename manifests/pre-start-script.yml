@@ -1,15 +1,15 @@
 ---
-name: prepare-env
+name: pre-start-script
 
 instance_groups:
-- name: prepare-env
+- name: pre-start-script
   azs: [z1, z2, z3]
   instances: 1
   vm_type: default
   stemcell: default
   networks: [{name: default}]
   jobs:
-  - name: prepare_env
+  - name: pre-start-script
     release: collection-of-pullrequests
     properties:
       script: |-
