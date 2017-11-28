@@ -1,0 +1,41 @@
+---
+name: cf_credentials_link
+packages: []
+templates:
+  ignoreme: ignoreme
+
+provides:
+- name: cf-credentials
+  type: cf-credentials
+  properties:
+  - api_url
+  - uaa_url
+  - ca_cert
+  - api_users
+  - uaa_clients
+
+properties:
+  api_url:
+    description: URL to Cloud Foundry API
+    example: https://api.system.mycompany.com
+  uaa_url:
+    description: URL to Cloud Foundry UAA
+    example: https://uaa.system.mycompany.com
+  ca_cert:
+    description: Root certificate for client access to Cloud Foundry API/UAA
+
+  api_users:
+    description: Admin user credentials to use to interact with Cloud Foundry
+    example:
+    - name: bosh
+      password: "((cf_bosh_admin_password))"
+
+  uaa_clients:
+    description: Set of available UAA clients for 3rd party applications
+    example:
+      cc-service-dashboards:
+        secret: "((uaa_clients_cc-service-dashboards_secret))"
+      cc_service_key_client:
+        secret: "((uaa_clients_cc_service_key_client_secret))"
+      routing_api_client:
+        secret: "((uaa_clients_routing_api_client_secret))"
