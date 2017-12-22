@@ -1,1 +1,0 @@
-* `-%>` does not appear to be supported by `bosh create-env`
